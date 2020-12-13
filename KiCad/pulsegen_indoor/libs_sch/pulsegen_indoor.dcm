@@ -1,0 +1,11 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TLX9310
+D Photocoupler, 2.7-5.5V
+$ENDCMP
+#
+$CMP TPS22810
+D 2.7-18V, 79mOhm Load switch with thermal protection
+$ENDCMP
+#
+#End Doc Library

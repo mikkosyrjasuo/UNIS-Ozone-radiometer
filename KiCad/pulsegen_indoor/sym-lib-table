@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name pulsegen_indoor)(type Legacy)(uri ${KIPRJMOD}/libs_sch/pulsegen_indoor.lib)(options "")(descr ""))
+)
