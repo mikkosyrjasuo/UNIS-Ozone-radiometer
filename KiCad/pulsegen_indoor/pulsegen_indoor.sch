@@ -64,7 +64,7 @@ L Device:R R1
 U 1 1 5FD68DD9
 P 3600 1700
 F 0 "R1" V 3393 1700 50  0000 C CNN
-F 1 "R" V 3484 1700 50  0000 C CNN
+F 1 "510" V 3484 1700 50  0000 C CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3530 1700 50  0001 C CNN
 F 3 "~" H 3600 1700 50  0001 C CNN
 	1    3600 1700
@@ -127,28 +127,6 @@ F 3 "~" H 2300 3350 50  0001 C CNN
 	1    2300 3350
 	1    0    0    1   
 $EndComp
-$Comp
-L pulsegen_indoor:TLX9310 U3
-U 1 1 5FD6BD82
-P 4200 3100
-F 0 "U3" H 4300 3215 50  0000 C CNN
-F 1 "TLX9310" H 4300 3124 50  0000 C CNN
-F 2 "Package_SO:MFSOP6-5_4.4x3.6mm_P1.27mm" H 4200 3100 50  0001 C CNN
-F 3 "" H 4200 3100 50  0001 C CNN
-	1    4200 3100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 5FD6BD8C
-P 3600 3250
-F 0 "R2" V 3393 3250 50  0000 C CNN
-F 1 "R" V 3484 3250 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3530 3250 50  0001 C CNN
-F 3 "~" H 3600 3250 50  0001 C CNN
-	1    3600 3250
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	3750 3250 3800 3250
 $Comp
@@ -163,22 +141,7 @@ F 3 "" H 4850 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4800 3650 4850 3650
-Wire Wire Line
 	4850 3650 4850 3750
-$Comp
-L power:+5V #PWR08
-U 1 1 5FD6BDA6
-P 4950 3250
-F 0 "#PWR08" H 4950 3100 50  0001 C CNN
-F 1 "+5V" H 4965 3423 50  0000 C CNN
-F 2 "" H 4950 3250 50  0001 C CNN
-F 3 "" H 4950 3250 50  0001 C CNN
-	1    4950 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4950 3250 4800 3250
 Wire Wire Line
 	2500 3250 3450 3250
 Wire Wire Line
@@ -187,8 +150,8 @@ Wire Wire Line
 	3300 3350 3300 3650
 Wire Wire Line
 	3300 3650 3800 3650
-Text Notes 950  3300 0    50   ~ 10
-GPSDO\n10MHz reference output
+Text Notes 950  3350 0    50   ~ 10
+GPSDO\n10MHz sine wave\nreference
 Wire Notes Line
 	850  1600 1950 1600
 Wire Notes Line
@@ -289,25 +252,6 @@ Wire Wire Line
 Wire Wire Line
 	5000 6550 5000 6650
 $Comp
-L Device:R R7
-U 1 1 5FD77536
-P 5200 6350
-F 0 "R7" V 5400 6350 50  0000 C CNN
-F 1 "R" V 5300 6350 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 5130 6350 50  0001 C CNN
-F 3 "~" H 5200 6350 50  0001 C CNN
-	1    5200 6350
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	4800 6350 5050 6350
-Wire Wire Line
-	4800 6150 5450 6150
-Wire Wire Line
-	5450 6150 5450 6350
-Wire Wire Line
-	5450 6350 5350 6350
-$Comp
 L Connector:Conn_01x02_Male J3
 U 1 1 5FD7A45B
 P 2300 4300
@@ -402,9 +346,6 @@ Wire Wire Line
 	5800 6550 5800 6600
 Wire Wire Line
 	5800 6250 5800 6150
-Wire Wire Line
-	5800 6150 5450 6150
-Connection ~ 5450 6150
 Connection ~ 5800 6150
 $Comp
 L power:+12V #PWR016
@@ -464,8 +405,6 @@ F 3 "" H 8050 4950 50  0001 C CNN
 	1    8050 4950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8050 3700 8050 3800
 Wire Wire Line
 	8050 4900 8050 4950
 Wire Wire Line
@@ -540,7 +479,6 @@ F 3 "" H 6000 4700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6000 4600 6000 4700
-NoConn ~ 6750 4700
 Wire Wire Line
 	6750 4300 6000 4300
 $Comp
@@ -709,8 +647,6 @@ Wire Wire Line
 	1300 6050 1300 6100
 Wire Wire Line
 	1300 5700 1300 5750
-Text GLabel 8050 3700 1    50   Input ~ 0
-PulseGen12V
 Text GLabel 6550 6150 2    50   Input ~ 0
 PulseGen12V
 $Comp
@@ -724,8 +660,6 @@ F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b
 	1    8700 1500
 	1    0    0    -1  
 $EndComp
-Text GLabel 8050 1500 0    50   Input ~ 0
-PulseGen12V
 $Comp
 L Device:CP C2
 U 1 1 5FD79DCE
@@ -969,4 +903,86 @@ F 3 "~" H 6000 6050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5800 6150 5800 6050
+Text Notes 3750 7350 0    50   Italic 0
+R7, R8 and C9 not installed
+$Comp
+L power:+12V #PWR?
+U 1 1 5FF48DF6
+P 8050 1500
+F 0 "#PWR?" H 8050 1350 50  0001 C CNN
+F 1 "+12V" H 8065 1673 50  0000 C CNN
+F 2 "" H 8050 1500 50  0001 C CNN
+F 3 "" H 8050 1500 50  0001 C CNN
+	1    8050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FF5AFF9
+P 9450 4900
+F 0 "TP?" H 9508 5018 50  0000 L CNN
+F 1 "Output" H 9508 4927 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 9650 4900 50  0001 C CNN
+F 3 "~" H 9650 4900 50  0001 C CNN
+	1    9450 4900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9450 4400 9450 4900
+$Comp
+L power:+12V #PWR?
+U 1 1 5FF5F72B
+P 8050 3650
+F 0 "#PWR?" H 8050 3500 50  0001 C CNN
+F 1 "+12V" H 8065 3823 50  0000 C CNN
+F 2 "" H 8050 3650 50  0001 C CNN
+F 3 "" H 8050 3650 50  0001 C CNN
+	1    8050 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 3650 8050 3800
+$Comp
+L Device:Transformer_1P_1S T?
+U 1 1 5FF62FE2
+P 4200 3450
+F 0 "T?" H 4200 3900 50  0000 C CNN
+F 1 "MABA-010125-TC1113" H 4200 3800 50  0000 C CNN
+F 2 "" H 4200 3450 50  0001 C CNN
+F 3 "~" H 4200 3450 50  0001 C CNN
+	1    4200 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 3450 4800 3250
+Wire Wire Line
+	4800 3250 4600 3250
+Wire Wire Line
+	4600 3650 4850 3650
+$Comp
+L Device:C C?
+U 1 1 5FF62A70
+P 3600 3250
+F 0 "C?" H 3715 3296 50  0000 L CNN
+F 1 "330p" H 3715 3205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3638 3100 50  0001 C CNN
+F 3 "~" H 3600 3250 50  0001 C CNN
+	1    3600 3250
+	0    -1   1    0   
+$EndComp
+Text Notes 3800 3850 0    50   Italic 0
+Incorrect footprint!
+Text GLabel 6700 4700 0    50   Input ~ 0
+PulseGen12V
+Wire Wire Line
+	6700 4700 6750 4700
+Wire Wire Line
+	4800 6150 5000 6150
+Wire Wire Line
+	4800 6350 5000 6350
+Wire Wire Line
+	5000 6350 5000 6150
+Connection ~ 5000 6150
+Wire Wire Line
+	5000 6150 5800 6150
 $EndSCHEMATC
