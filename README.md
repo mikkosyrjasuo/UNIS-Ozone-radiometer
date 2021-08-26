@@ -10,7 +10,7 @@ The instrument itself is based on commercial satellite TV components and was ori
 
 The antenna comprises a small parabolic dish (45-50cm) and a Universal Low-Noise Block (LNB) downconverter. The Ozone spectral line at 11072.4545MHz is mixed with a local oscillator at 9.75GHz resulting in an intermediate frequency (IF) of 1.322GHz. The IF is sampled using a software-defined radio (SDR) and it turns out that inexpensive RTL-SDRs are good enough. The actual analysis of the sampled signal is done by a PC (or Raspberry PI).
 
-If one uses a dual LNB and two RTL-SDRs, one can record both vertical and horizontal polarisations.
+If one uses a universal dual LNB connected to two RTL-SDRs, one can record both vertical and horizontal polarisations. For vertical polarisation, the bias voltage should nominally be 13V, although 12V is used here. A bias voltage at 18V provides a horizontal polarisation.
 
 A complication is that the LNB LO frequency may vary quite a bit depending on the outdoor temperature. To compensate for this, a known calibration signal is used [VSRT Memo #057](https://www.haystack.mit.edu/wp-content/uploads/2020/07/memo_VSRT_057.pdf). The 1107th harmonic of a 10MHz square wave is regularly fed to the LNB to provide a known frequency peak.
 
